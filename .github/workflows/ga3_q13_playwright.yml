@@ -1,0 +1,29 @@
+name: GA3 Q13 Playwright Scraper
+
+on:
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install dependencies
+        working-directory: playwright
+        run: npm install
+
+      - name: Install Playwright Chromium
+        working-directory: playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: 24f3004381@ds.study.iitm.ac.in - run scraper
+        working-directory: playwright
+        run: npm run start

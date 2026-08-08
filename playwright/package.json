@@ -1,0 +1,12 @@
+{
+  "name": "ga3-q13-playwright",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "playwright": "^1.41.0"
+  },
+  "scripts": {
+    "start": "node scrape.js"
+  }
+}
